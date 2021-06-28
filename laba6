@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+void menu(int& a, int& b, int& c) {
+    int d = 0; 
+    while (d != 4) { // запуск выбора
+        cout << "1 - Ввод верхнего предела " << endl;
+        cout << " Число - " << a << endl;
+        cout << "2 - Ввод нижнего предела " << endl;
+        cout << " Число - " << b << endl; 
+        cout << "3 - Изменить число " << endl;
+        cout << " Число - " << c << endl; 
+        cout << "4 - Выйти " << endl;
+        cout << "Выберите действие ";
+        cin >> d;
+        switch (d) {
+        case(1):
+            cout << "Изменить "; 
+            cin >> a;
+            cout << endl;
+            break;
+        case(2):
+            cout << "Изменить ";
+            cin >> b;
+            cout << endl;
+            break;
+        case(3):
+            cout << "Изменить входящее число на - "; 
+            cin >> c;
+            cout << endl;
+            break;
+        }
+        if (d == 4) exit;
+    }
+}
+
+void vvod(int& a, int& b) { 
+    int c;
+    cout << "Введи входящее число" << endl;
+    cin >> c;
+    while (true) { 
+        if (a < c && c < b) {
+            cout << "Число входит в интервал" << endl;
+            break;
+        }
+        else (false); 
+        {
+            menu(a, b, c);
+        }
+    }
+}
+
+int main()
+{
+    int a, b;
+    setlocale(LC_ALL, "ru");
+    cout << "Меню" << endl;
+    cout << "*********************************************" << endl;
+    vvod(a, b);
+    cout << "*********************************************" << endl;
+    system("pause");
+    return 0;
+}
